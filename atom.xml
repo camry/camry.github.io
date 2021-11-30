@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://camry.github.io</id>
     <title>Camry Blog</title>
-    <updated>2021-11-30T12:10:20.869Z</updated>
+    <updated>2021-11-30T12:31:34.382Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://camry.github.io"/>
     <link rel="self" href="https://camry.github.io/atom.xml"/>
@@ -11,12 +11,12 @@
     <icon>https://camry.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Camry Blog</rights>
     <entry>
-        <title type="html"><![CDATA[Golang 针对 MySQL 数据库表结构的差异 SQL 工具（mysqldiff）]]></title>
+        <title type="html"><![CDATA[Golang 针对 MySQL 数据库表结构的差异 SQL 工具]]></title>
         <id>https://camry.github.io/post/golang-zhen-dui-mysql-shu-ju-ku-biao-jie-gou-de-chai-yi-sql-gong-ju-mysqldiff/</id>
         <link href="https://camry.github.io/post/golang-zhen-dui-mysql-shu-ju-ku-biao-jie-gou-de-chai-yi-sql-gong-ju-mysqldiff/">
         </link>
         <updated>2021-11-30T12:08:23.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="mysqldiff">mysqldiff</h1>
+        <content type="html"><![CDATA[<h1 id="mysqldiff"><a href="https://github.com/camry/go-mysqldiff">mysqldiff</a></h1>
 <p>Golang 针对 MySQL 数据库表结构的差异 SQL 工具。</p>
 <h2 id="使用">使用</h2>
 <pre><code class="language-bash"># 查看帮助
