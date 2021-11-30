@@ -2,23 +2,22 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>关于 | Camry Blog</title>
+<title>Golang 针对 MySQL 数据库表结构的差异 SQL 工具（mysqldiff） | Camry Blog</title>
 <link rel="shortcut icon" href="https://camry.github.io/favicon.ico?v=1638274195398">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://camry.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="关于 | Camry Blog - Atom Feed" href="https://camry.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="Golang 针对 MySQL 数据库表结构的差异 SQL 工具（mysqldiff） | Camry Blog - Atom Feed" href="https://camry.github.io/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="
-欢迎来到我的小站呀，很高兴遇见你！🤝
-
-🏠 关于本站
-👨‍💻 博主是谁
-⛹ 兴趣爱好
-📬 联系我呀
-..." />
+    <meta name="description" content="mysqldiff
+Golang 针对 MySQL 数据库表结构的差异 SQL 工具。
+使用
+# 查看帮助
+./mysqldiff --help
+# 实例
+./mysqldiff --source user:password@host:po..." />
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -81,11 +80,11 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              关于
+              Golang 针对 MySQL 数据库表结构的差异 SQL 工具（mysqldiff）
             </h2>
             <div class="post-info">
               <span>
-                2019-01-25
+                2021-11-30
               </span>
               <span>
                 1 min read
@@ -95,23 +94,34 @@
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
+                <h1 id="mysqldiff">mysqldiff</h1>
+<p>Golang 针对 MySQL 数据库表结构的差异 SQL 工具。</p>
+<h2 id="使用">使用</h2>
+<pre><code class="language-bash"># 查看帮助
+./mysqldiff --help
+# 实例
+./mysqldiff --source user:password@host:port --db db1:db2
+./mysqldiff --source user:password@host:port --target user:password@host:port --db db1:db2
+./mysqldiff --source user:password@host:port --target user:password@host:port --db db1:db2 --comment
+</code></pre>
+<h2 id="自动补全">自动补全</h2>
+<pre><code class="language-bash">mysqldiff completion bash &gt; /etc/bash_completion.d/mysqldiff &amp;&amp; source /etc/bash_completion.d/mysqldiff
+</code></pre>
+<h2 id="打包">打包</h2>
+<blockquote>
+<p>包含命令自动补全</p>
 </blockquote>
-<h2 id="关于本站">🏠 关于本站</h2>
-<h2 id="博主是谁">👨‍💻 博主是谁</h2>
-<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
-<h2 id="联系我呀">📬 联系我呀</h2>
+<pre><code class="language-bash">./install.bash
+</code></pre>
 
               </div>
               <div class="toc-container">
                 <ul class="markdownIt-TOC">
-<li>
+<li><a href="#mysqldiff">mysqldiff</a>
 <ul>
-<li><a href="#%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99">🏠 关于本站</a></li>
-<li><a href="#%E5%8D%9A%E4%B8%BB%E6%98%AF%E8%B0%81">👨‍💻 博主是谁</a></li>
-<li><a href="#%E5%85%B4%E8%B6%A3%E7%88%B1%E5%A5%BD">⛹ 兴趣爱好</a></li>
-<li><a href="#%E8%81%94%E7%B3%BB%E6%88%91%E5%91%80">📬 联系我呀</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8">使用</a></li>
+<li><a href="#%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8">自动补全</a></li>
+<li><a href="#%E6%89%93%E5%8C%85">打包</a></li>
 </ul>
 </li>
 </ul>
