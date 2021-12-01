@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://camry.github.io</id>
     <title>camry</title>
-    <updated>2021-12-01T01:49:49.245Z</updated>
+    <updated>2021-12-01T03:13:19.936Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://camry.github.io"/>
     <link rel="self" href="https://camry.github.io/atom.xml"/>
@@ -88,11 +88,39 @@ git branch -d server
 ]]></content>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Git tag 常用命令]]></title>
+        <id>https://camry.github.io/post/git-tag-chang-yong-ming-ling/</id>
+        <link href="https://camry.github.io/post/git-tag-chang-yong-ming-ling/">
+        </link>
+        <updated>2021-12-01T00:12:22.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="git-tag-常用命令">Git tag 常用命令</h1>
+<h2 id="创建-tag">创建 tag</h2>
+<blockquote>
+<p>注解：git tag 是打标签的命令，-a 是添加标签，其后要跟新标签号，-m 及后面的字符串是对该标签的注释。</p>
+</blockquote>
+<pre><code class="language-bash">git tag -a v1.0.1 -m &quot;Relase version 1.0.1&quot;
+</code></pre>
+<h2 id="提交-tag-到远程仓库">提交 tag 到远程仓库</h2>
+<pre><code class="language-bash">git push origin -tags
+</code></pre>
+<h2 id="删除-tag">删除 tag</h2>
+<pre><code class="language-bash">git tag -d v1.0.1
+</code></pre>
+<h2 id="删除远程-tag">删除远程 tag</h2>
+<pre><code class="language-bash">git push origin :refs/tags/v1.0.1
+</code></pre>
+<h2 id="查看-tag">查看 tag</h2>
+<pre><code class="language-bash">git tag
+git tag -l
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Git 使用向导]]></title>
         <id>https://camry.github.io/post/git-shi-yong-xiang-dao/</id>
         <link href="https://camry.github.io/post/git-shi-yong-xiang-dao/">
         </link>
-        <updated>2021-12-01T00:26:02.000Z</updated>
+        <updated>2021-11-30T23:26:02.000Z</updated>
         <content type="html"><![CDATA[<h2 id="服务端">服务端</h2>
 <h4 id="安装">安装</h4>
 <p><a href="https://about.gitlab.com/installation/">https://about.gitlab.com/installation/</a></p>
