@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://camry.github.io</id>
-    <title>Camry Blog</title>
-    <updated>2021-12-01T01:45:41.100Z</updated>
+    <title>camry</title>
+    <updated>2021-12-01T01:49:24.255Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://camry.github.io"/>
     <link rel="self" href="https://camry.github.io/atom.xml"/>
     <subtitle>&lt;small&gt;CN&lt;/small&gt; &lt;b&gt;China WuHan&lt;/b&gt;・Game Developer</subtitle>
     <logo>https://camry.github.io/images/avatar.png</logo>
     <icon>https://camry.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2021, Camry Blog</rights>
+    <rights>All rights reserved 2021, camry</rights>
     <entry>
         <title type="html"><![CDATA[Golang 针对 MySQL 数据库表结构的差异 SQL 工具]]></title>
         <id>https://camry.github.io/post/golang-zhen-dui-mysql-shu-ju-ku-biao-jie-gou-de-chai-yi-sql-gong-ju-mysqldiff/</id>
