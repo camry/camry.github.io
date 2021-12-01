@@ -2,23 +2,23 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>关于 | Camry Blog</title>
+<title>Git branch 常用命令 | Camry Blog</title>
 <link rel="shortcut icon" href="https://camry.github.io/favicon.ico?v=1638321901801">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://camry.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="关于 | Camry Blog - Atom Feed" href="https://camry.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="Git branch 常用命令 | Camry Blog - Atom Feed" href="https://camry.github.io/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="
-欢迎来到我的小站呀，很高兴遇见你！🤝
+    <meta name="description" content="Branch 常用命令
+打包
+差异文件打包
+git diff &lt;commit&gt; &lt;commit&gt; --name-only | xargs zip v1.0.0.zip
 
-🏠 关于本站
-👨‍💻 博主是谁
-⛹ 兴趣爱好
-📬 联系我呀
-..." />
+分支
+查看已经合并进来的分支
+git bran..." />
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -91,11 +91,11 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              关于
+              Git branch 常用命令
             </h2>
             <div class="post-info">
               <span>
-                2019-01-25
+                2021-12-01
               </span>
               <span>
                 1 min read
@@ -105,23 +105,71 @@
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
+                <h1 id="branch-常用命令">Branch 常用命令</h1>
+<h2 id="打包">打包</h2>
+<h4 id="差异文件打包">差异文件打包</h4>
+<pre><code class="language-bash">git diff &lt;commit&gt; &lt;commit&gt; --name-only | xargs zip v1.0.0.zip
+</code></pre>
+<h2 id="分支">分支</h2>
+<h4 id="查看已经合并进来的分支">查看已经合并进来的分支</h4>
+<pre><code class="language-bash">git branch --merged
+</code></pre>
+<h4 id="查看尚未合并进来的分支">查看尚未合并进来的分支</h4>
+<pre><code class="language-bash">git branch --no-merged
+</code></pre>
+<h4 id="推送本地分支">推送本地分支</h4>
+<pre><code class="language-bash">git push origin 分支名称
+git fetch origin
+</code></pre>
+<h4 id="跟踪远程分支">跟踪远程分支</h4>
+<pre><code class="language-bash">git checkout --track origin/serverfix
+</code></pre>
+<h4 id="删除远程分支">删除远程分支</h4>
+<pre><code class="language-bash">git push origin :serverfix
+</code></pre>
+<h4 id="分支的衍合">分支的衍合</h4>
+<pre><code class="language-bash"># git rebase --onto 基底分支 特性分支...
+git rebase --onto master server client
+# 将client分支合并至master
+git checkout master
+git merge client
+# git rebase 主分支 特性分支
+git rebase master server
+# 将server分支合并至master
+git checkout master
+git merge server
+# 删除client分支
+git branch -d client
+# 删除server分支
+git branch -d server
+</code></pre>
+<blockquote>
+<p>注：把一个分支中的修改整合到另一个分支的办法有两种：merge 和 rebase（译注：rebase 的翻译暂定为“衍合”）。</p>
 </blockquote>
-<h2 id="关于本站">🏠 关于本站</h2>
-<h2 id="博主是谁">👨‍💻 博主是谁</h2>
-<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
-<h2 id="联系我呀">📬 联系我呀</h2>
+<hr>
 
               </div>
               <div class="toc-container">
                 <ul class="markdownIt-TOC">
-<li>
+<li><a href="#branch-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4">Branch 常用命令</a>
 <ul>
-<li><a href="#%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99">🏠 关于本站</a></li>
-<li><a href="#%E5%8D%9A%E4%B8%BB%E6%98%AF%E8%B0%81">👨‍💻 博主是谁</a></li>
-<li><a href="#%E5%85%B4%E8%B6%A3%E7%88%B1%E5%A5%BD">⛹ 兴趣爱好</a></li>
-<li><a href="#%E8%81%94%E7%B3%BB%E6%88%91%E5%91%80">📬 联系我呀</a></li>
+<li><a href="#%E6%89%93%E5%8C%85">打包</a><br>
+*
+<ul>
+<li><a href="#%E5%B7%AE%E5%BC%82%E6%96%87%E4%BB%B6%E6%89%93%E5%8C%85">差异文件打包</a></li>
+</ul>
+</li>
+<li><a href="#%E5%88%86%E6%94%AF">分支</a><br>
+*
+<ul>
+<li><a href="#%E6%9F%A5%E7%9C%8B%E5%B7%B2%E7%BB%8F%E5%90%88%E5%B9%B6%E8%BF%9B%E6%9D%A5%E7%9A%84%E5%88%86%E6%94%AF">查看已经合并进来的分支</a></li>
+<li><a href="#%E6%9F%A5%E7%9C%8B%E5%B0%9A%E6%9C%AA%E5%90%88%E5%B9%B6%E8%BF%9B%E6%9D%A5%E7%9A%84%E5%88%86%E6%94%AF">查看尚未合并进来的分支</a></li>
+<li><a href="#%E6%8E%A8%E9%80%81%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF">推送本地分支</a></li>
+<li><a href="#%E8%B7%9F%E8%B8%AA%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF">跟踪远程分支</a></li>
+<li><a href="#%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF">删除远程分支</a></li>
+<li><a href="#%E5%88%86%E6%94%AF%E7%9A%84%E8%A1%8D%E5%90%88">分支的衍合</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -131,6 +179,15 @@
           </article>
         </div>
 
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://camry.github.io/post/golang-zhen-dui-mysql-shu-ju-ku-biao-jie-gou-de-chai-yi-sql-gong-ju-mysqldiff/">
+              <h3 class="post-title">
+                Golang 针对 MySQL 数据库表结构的差异 SQL 工具
+              </h3>
+            </a>
+          </div>
         
 
         

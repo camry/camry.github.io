@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://camry.github.io</id>
     <title>Camry Blog</title>
-    <updated>2021-12-01T01:17:39.182Z</updated>
+    <updated>2021-12-01T01:25:12.640Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://camry.github.io"/>
     <link rel="self" href="https://camry.github.io/atom.xml"/>
@@ -10,6 +10,56 @@
     <logo>https://camry.github.io/images/avatar.png</logo>
     <icon>https://camry.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Camry Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Git branch 常用命令]]></title>
+        <id>https://camry.github.io/post/git-branch-chang-yong-ming-ling/</id>
+        <link href="https://camry.github.io/post/git-branch-chang-yong-ming-ling/">
+        </link>
+        <updated>2021-12-01T01:23:53.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="branch-常用命令">Branch 常用命令</h1>
+<h2 id="打包">打包</h2>
+<h4 id="差异文件打包">差异文件打包</h4>
+<pre><code class="language-bash">git diff &lt;commit&gt; &lt;commit&gt; --name-only | xargs zip v1.0.0.zip
+</code></pre>
+<h2 id="分支">分支</h2>
+<h4 id="查看已经合并进来的分支">查看已经合并进来的分支</h4>
+<pre><code class="language-bash">git branch --merged
+</code></pre>
+<h4 id="查看尚未合并进来的分支">查看尚未合并进来的分支</h4>
+<pre><code class="language-bash">git branch --no-merged
+</code></pre>
+<h4 id="推送本地分支">推送本地分支</h4>
+<pre><code class="language-bash">git push origin 分支名称
+git fetch origin
+</code></pre>
+<h4 id="跟踪远程分支">跟踪远程分支</h4>
+<pre><code class="language-bash">git checkout --track origin/serverfix
+</code></pre>
+<h4 id="删除远程分支">删除远程分支</h4>
+<pre><code class="language-bash">git push origin :serverfix
+</code></pre>
+<h4 id="分支的衍合">分支的衍合</h4>
+<pre><code class="language-bash"># git rebase --onto 基底分支 特性分支...
+git rebase --onto master server client
+# 将client分支合并至master
+git checkout master
+git merge client
+# git rebase 主分支 特性分支
+git rebase master server
+# 将server分支合并至master
+git checkout master
+git merge server
+# 删除client分支
+git branch -d client
+# 删除server分支
+git branch -d server
+</code></pre>
+<blockquote>
+<p>注：把一个分支中的修改整合到另一个分支的办法有两种：merge 和 rebase（译注：rebase 的翻译暂定为“衍合”）。</p>
+</blockquote>
+<hr>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Golang 针对 MySQL 数据库表结构的差异 SQL 工具]]></title>
         <id>https://camry.github.io/post/golang-zhen-dui-mysql-shu-ju-ku-biao-jie-gou-de-chai-yi-sql-gong-ju-mysqldiff/</id>
