@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://camry.github.io</id>
+    <title>camry</title>
+    <updated>2022-12-30T03:14:22.134Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://camry.github.io"/>
+    <link rel="self" href="https://camry.github.io/atom.xml"/>
+    <subtitle>🇨🇳 &lt;b&gt;China Wuhan&lt;/b&gt;・♨&lt;b&gt;Game Developer&lt;/b&gt;</subtitle>
+    <logo>https://camry.github.io/images/avatar.png</logo>
+    <icon>https://camry.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2022, camry</rights>
+    <entry>
+        <title type="html"><![CDATA[MySQL convert to SQLite3]]></title>
+        <id>https://camry.github.io/post/mysql-convert-to-sqlite3/</id>
+        <link href="https://camry.github.io/post/mysql-convert-to-sqlite3/">
+        </link>
+        <updated>2022-12-30T01:48:32.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="mysql2sqlite">mysql2sqlite</h1>
+<p>MySQL convert to SQLite3. <a href="https://github.com/camry/mysql2sqlite">https://github.com/camry/mysql2sqlite</a></p>
+<h2 id="使用">使用</h2>
+<pre><code class="language-bash">rm -f game_base.db sqlite_game_base.sql &amp;&amp; \
+mysql2sqlite --server user:password@host:port --db game_base &gt; sqlite_game_base.sql &amp;&amp; \
+sqlite3 game_base.db &lt; sqlite_game_base.sql
+# 忽略表和字段配置
+rm -f game_base.db sqlite_game_base.sql &amp;&amp; \
+mysql2sqlite --server user:password@host:port --db game_base --config config/ignore.yaml &gt; sqlite_game_base.sql &amp;&amp; \
+sqlite3 game_base.db &lt; sqlite_game_base.sql
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[MySQL 数据库表结构的差异 SQL 工具 mysqldiff]]></title>
+        <id>https://camry.github.io/post/golang-zhen-dui-mysql-shu-ju-ku-biao-jie-gou-de-chai-yi-sql-gong-ju-mysqldiff/</id>
+        <link href="https://camry.github.io/post/golang-zhen-dui-mysql-shu-ju-ku-biao-jie-gou-de-chai-yi-sql-gong-ju-mysqldiff/">
+        </link>
+        <updated>2022-12-30T01:42:17.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="mysqldiff">mysqldiff</h1>
+<p>Golang 针对 MySQL 数据库表结构的差异 SQL 工具。<a href="https://github.com/camry/go-mysqldiff">https://github.com/camry/go-mysqldiff</a></p>
+<h2 id="使用">使用</h2>
+<pre><code class="language-bash"># 查看帮助
+./mysqldiff --help
+# 实例
+./mysqldiff --source user:password@host:port --db db1:db2
+./mysqldiff --source user:password@host:port --target user:password@host:port --db db1:db2
+./mysqldiff --source user:password@host:port --target user:password@host:port --db db1:db2 --comment
+</code></pre>
+<h2 id="自动补全">自动补全</h2>
+<pre><code class="language-bash">mysqldiff completion bash &gt; /etc/bash_completion.d/mysqldiff &amp;&amp; source /etc/bash_completion.d/mysqldiff
+</code></pre>
+<h2 id="打包">打包</h2>
+<blockquote>
+<p>包含命令自动补全</p>
+</blockquote>
+<pre><code class="language-bash">./install.bash
+</code></pre>
+]]></content>
+    </entry>
+</feed>
